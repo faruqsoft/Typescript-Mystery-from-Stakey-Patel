@@ -16,7 +16,12 @@ const accountingCopy = {
     name:'dummy',
     describe:accounting.describe};
 accountingCopy.describe();
+
 */
+   
+    
+
+
 
 
 // private, public access modyfiers
@@ -44,16 +49,22 @@ class Department {
 
 const accounting = new Department("Accounting", []);
 accounting.describe();
+const newDept = new Department("HR", []);
 
-accounting.addEmployee("Patel");
+accounting.addEmployee("Patel",);
 accounting.addEmployee("Shivani");
+
+newDept.addEmployee("xyz");
+newDept.addEmployee("abc");
+newDept.addEmployee("def");
+newDept.printEmployeeInformation();
 
 accounting.printEmployeeInformation();
 
 // accounting.employees = ["xyz"]; 
-accounting.printEmployeeInformation();
-*/
 
+
+*/
 //! readonly
 /*
 class Department {
@@ -66,8 +77,8 @@ class Department {
         this.employees = [];
     }
     describe(this: Department) {
-        // this.id = "d2"; 
-        console.log("Department", this.name);
+        // this.id = "d2"; ata somvob na karan readonly
+        console.log(`Department (${this.id}), ${this.name}`);
     }
 
     addEmployee(emp: string) {
@@ -78,12 +89,17 @@ class Department {
         console.log(this.employees);
     }
 }
+const hrDept = new Department("HR");
+hrDept.describe();
+hrDept.addEmployee("abc");
+hrDept.addEmployee("def");
+hrDept.printEmployeeInformation();
+
 */
-
-
 //! Inheritence
 //! Override properties & protected access modifier
 //! setter & getter method
+/*
 class Department {
     public name: string;
     protected employees: string[];
@@ -155,7 +171,7 @@ console.log("getter -> ", accDep.getReports);
 accDep.setReports = "Code review error";
 console.log("getter -> ", accDep.getReports);
 
-
+*/
 
 
 //! static method
@@ -191,7 +207,7 @@ console.log(salary);
 
 
 //! abstract classes
-
+/*
 abstract class Department3 {
     name: string;
     protected employees: string[] = [];
@@ -218,3 +234,5 @@ class Subclass extends Department3 {
 }
 const subClass = new Subclass("D1", []);
 subClass.describe();
+
+*/
